@@ -25,8 +25,7 @@ $regp = 'HKLM:\SYSTEM\CurrentControlSet\Services\PolicyAgent' # If VPN server is
   
 # Add L2TP VPN
 try {  
-  Add-VpnConnection -Name $VpnName -ServerAddress $gateway -TunnelType L2tp -AuthenticationMethod MSChapv2 -EncryptionLevel Optional -L2tpPsk $psk -Force ` 
-  -AllUserConnection -UseWinLogonCredential $false -SplitTunneling
+  Add-VpnConnection -Name $VpnName -ServerAddress $gateway -TunnelType L2tp -AuthenticationMethod MSChapv2 -EncryptionLevel Optional -L2tpPsk $psk -AllUserConnection -UseWinLogonCredential $false -SplitTunneling -Force
   Write-Host "Connection has been added." -f Green    
 }
 Catch {
